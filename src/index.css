@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  
+  --color-chess-bg: #fcfbf7;
+  --color-chess-card: #ffffff;
+  --color-chess-ink: #0f172a;
+  --color-chess-gold: #d4af37;
+  --color-chess-gold-light: #f4ebd0;
+  --color-chess-blue: #1e293b;
+  --color-chess-accent: #3b82f6;
+}
+
+@layer base {
+  body {
+    @apply bg-chess-bg text-chess-ink font-sans antialiased;
+  }
+}
+
+.glass {
+  @apply bg-white/80 backdrop-blur-xl border border-white/40 shadow-sm;
+}
+
+.chess-card {
+  @apply bg-chess-card rounded-[2rem] border border-slate-200/60 shadow-xl shadow-slate-200/40 overflow-hidden transition-all duration-300;
+}
+
+.chess-button-primary {
+  @apply px-6 py-3 bg-chess-blue text-white rounded-2xl font-bold transition-all duration-300 hover:bg-chess-ink hover:shadow-xl hover:shadow-chess-blue/20 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.chess-button-gold {
+  @apply px-6 py-3 bg-chess-gold text-white rounded-2xl font-bold transition-all duration-300 hover:brightness-110 hover:shadow-xl hover:shadow-chess-gold/20 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.chess-input {
+  @apply w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-chess-gold/30 font-medium transition-all;
+}
+
+.pattern-grid {
+  background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
+  background-size: 24px 24px;
+}
